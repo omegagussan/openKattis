@@ -10,9 +10,12 @@ def computeOperations(displayMessage):
       stack.append(char)
       adding += 1
     elif char in stack:
-      while char != stack[-1]:
-        removing += 1
+      index = stack.index(char)
+      pops = len(stack)-index -1
+      for p in range(pops):
         stack.pop()
+        removing += 1
+      assert (stack[-1] == char) 
     else:
       stack.append(char)
       adding += 1
